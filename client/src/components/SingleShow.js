@@ -80,12 +80,15 @@ export default class SingleShow extends Component {
                         </button>
                         {this.state.updatedShow ? <form onSubmit={this.updateShow}>
                             <input type="text" value={this.state.updatedShow.name} name="name" placeholder="Name" onChange={this.handleInputChange} />
-                            <input type="text" value={this.state.updatedShow.description} name="description" placeholder="Description" onChange={this.handleInputChange} />
+                            <input type="text" value={this.state.updatedShow.location} name="location" placeholder="Location" onChange={this.handleInputChange} />
                             <input type="submit" />
                         </form> : null}
                     </span>
                     <span>
                         <button onClick={this.deleteShow}>Delete</button>
+                        <a href="/">
+                            <button>Home</button>
+                        </a>
                     </span>
                 </div>
 
