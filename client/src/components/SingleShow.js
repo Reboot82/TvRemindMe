@@ -16,7 +16,7 @@ export default class SingleShow extends Component {
     state = {
         updatedShow: {
             name: '',
-            description: ''
+            location: ''
         },
         redirectToHome: false
     }
@@ -72,11 +72,11 @@ export default class SingleShow extends Component {
                 <div>
                     <div>
                         <h1>{this.state.name}</h1>
-                        <h3>{this.state.description}</h3>
+                        <h3>{this.state.location}</h3>
                     </div>
                     <span>
                         <button onClick={this.toggleUpdateShowForm}>
-                            {this.state.updatedShow ? 'Update Show' : 'Hide'}
+                            {this.state.updatedShow ? 'Hide' : 'Update Show'}
                         </button>
                         {this.state.updatedShow ? <form onSubmit={this.updateShow}>
                             <input type="text" value={this.state.updatedShow.name} name="name" placeholder="Name" onChange={this.handleInputChange} />

@@ -17,7 +17,7 @@ export default class Show extends Component {
         showList: [],
         newShow: {
             name: '',
-            description: ''
+            location: ''
         },
     }
 
@@ -90,7 +90,7 @@ export default class Show extends Component {
                     </button>
                     {this.state.newShow ? <form onSubmit={this.createNewShow}>
                         <input type="text" value={this.state.newShow.name} name="name" placeholder="Name" onChange={this.handleInputChange} />
-                        <input type="text" value={this.state.newShow.description} name="description" placeholder="Description" onChange={this.handleInputChange} />
+                        <input type="text" value={this.state.newShow.location} name="location" placeholder="Location" onChange={this.handleInputChange} />
                         <input type="submit" />
                     </form> : null}
                 </span>

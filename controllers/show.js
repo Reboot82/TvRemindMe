@@ -6,6 +6,10 @@ const showApi = require('../models/show.js')
 
 const showRouter = express.Router()
 
+/* Step 4
+ * 
+ * TODO: Put all request handlers here
+ */
 
 //getAll
 showRouter.get('/', (req, res) => {
@@ -47,6 +51,11 @@ showRouter.delete('/:showId', (req, res) => {
     })
 })
 
+/* Step 6
+ *
+ * Export the router from the file.
+ *
+ */
 module.exports = {
   showRouter
 }
