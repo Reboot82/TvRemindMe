@@ -15,6 +15,7 @@ export default class Show extends Component {
     */
     state = {
         showList: [],
+        newShowForm: true,
         newShow: {
             name: '',
             location: ''
@@ -52,14 +53,14 @@ export default class Show extends Component {
     }
 
     toggleNewShowForm = () => {
-        const newShow = !this.state.newShow
-        this.setState({ newShow })
+        const newShowForm = !this.state.newShowForm
+        this.setState({ newShowForm })
     }
 
     handleInputChange = (event) => {
         const newShow = { ...this.state.newShow }
         newShow[event.target.name] = event.target.value
-        this.setState({ newShow })
+        this.setState({ newShow: newShow })
     }
 
 
@@ -89,9 +90,9 @@ export default class Show extends Component {
                 </div>
                 <span>
                     <button onClick={this.toggleNewShowForm}>
-                        {this.state.newShow ? 'New Show' : 'Hide'}
+                        {this.state.newShowForm ? 'New Show' : 'Hide'}
                     </button>
-                    {this.state.newShow ? null : <form onSubmit={this.createNewShow}>
+                    {this.state.newShowForm ? null : <form onSubmit={this.createNewShow}>
                         <input type="text" value={this.state.newShow.name} name="name" placeholder="Name" onChange={this.handleInputChange} />
                         <input type="text" value={this.state.newShow.location} name="location" placeholder="Location" onChange={this.handleInputChange} />
                         <input type="submit" />

@@ -2,7 +2,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Redirect } from 'react-router-dom'
-import Episode from './Episode'
+// import Episode from './Episode'
 
 /* Step 2
  * Rename this class to reflect the component being created
@@ -18,6 +18,7 @@ export default class SingleShow extends Component {
         name: '',
         location: '',
         episodes: [],
+        showForm: true,
         updatedShow: {
             name: '',
             location: ''
@@ -70,8 +71,8 @@ export default class SingleShow extends Component {
     }
 
     toggleUpdateShowForm = () => {
-        const updatedShow = !this.state.updatedShow
-        this.setState({ updatedShow })
+        const showForm = !this.state.showForm
+        this.setState({ showForm })
     }
 
     deleteShow = (event) => {
@@ -86,7 +87,7 @@ export default class SingleShow extends Component {
     handleInputChange = (event) => {
         const updatedShow = { ...this.state.updatedShow }
         updatedShow[event.target.name] = event.target.value
-        this.setState({ updatedShow })
+        this.setState({ updatedShow: updatedShow })
     }
 
     render() {
@@ -104,9 +105,9 @@ export default class SingleShow extends Component {
                     </div>
                     <span>
                         <button onClick={this.toggleUpdateShowForm}>
-                            {this.state.updatedShow ? 'Update Show' : 'Hide'}
+                            {this.state.showForm ? 'Update Show' : 'Hide'}
                         </button>
-                        {this.state.updatedShow ? null : <form onSubmit={this.updateShow}>
+                        {this.state.showForm ? null : <form onSubmit={this.updateShow}>
                             <input type="text" value={this.state.updatedShow.name} name="name" placeholder="Name" onChange={this.handleInputChange} />
                             <input type="text" value={this.state.updatedShow.location} name="location" placeholder="Location" onChange={this.handleInputChange} />
                             <input type="submit" />
