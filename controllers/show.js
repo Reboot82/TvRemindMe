@@ -17,6 +17,10 @@ showRouter.get('/', (req, res) => {
     .then((shows) => {
       res.json(shows)
     })
+    .catch(error => {
+      console.log(error)
+      res.json(error)
+    })
 })
 
 //getOne
@@ -24,6 +28,10 @@ showRouter.get('/:showId', (req, res) => {
   showApi.getShow(req.params.showId)
     .then((singleShow) => {
       res.json(singleShow)
+    })
+    .catch(error => {
+      console.log(error)
+      res.json(error)
     })
 })
 
@@ -33,6 +41,10 @@ showRouter.post('/', (req, res) => {
     .then((newShow) => {
       res.json(newShow)
     })
+    .catch(error => {
+      console.log(error)
+      res.json(error)
+    })
 })
 
 //update
@@ -41,6 +53,10 @@ showRouter.put('/:showId', (req, res) => {
     .then((updatedShow) => {
       res.json(updatedShow)
     })
+    .catch(error => {
+      console.log(error)
+      res.json(error)
+    })
 })
 
 //delete
@@ -48,6 +64,10 @@ showRouter.delete('/:showId', (req, res) => {
   showApi.deleteShow(req.params.showId)
     .then((deletedShow) => {
       res.json(deletedShow)
+    })
+    .catch(error => {
+      console.log(error)
+      res.json(error)
     })
 })
 

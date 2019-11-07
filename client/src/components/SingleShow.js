@@ -15,6 +15,9 @@ export default class SingleShow extends Component {
     *
     */
     state = {
+        name: '',
+        location: '',
+        episodes: [],
         updatedShow: {
             name: '',
             location: ''
@@ -38,6 +41,25 @@ export default class SingleShow extends Component {
                 this.refreshList()
             })
     }
+
+    // componentDidMount() {
+    // const showId = this.props.match.params.showId
+    // axios.get(`/api/shows/${showId}`)
+    //     .then((res) => {
+    //         console.log(res.data)
+    //         const previousState = {...this.state}
+    //         const newState = Object.assign({}, previousState, res.data)
+    //          this.setState(newState)
+    //     })
+
+    //  axios.get(`api/episodes/byShowId/${showId})
+    //      .then((res) => {
+    //         console.log(res.data)
+    //         const previousState = {...this.state}
+    //         const newState = Object.assign({episodes: []}, previousState, { episodes: res.data })
+    //          this.setState(newState)
+    //     })
+    // }
 
     componentDidMount() {
         const showId = this.props.match.params.showId
@@ -75,7 +97,10 @@ export default class SingleShow extends Component {
                         <h1>{this.state.name}</h1>
                         <h3>{this.state.location}</h3>
                         <h2>Episodes</h2>
-                        <Episode episodeList={this.props.episodeList} />
+                        {this.state.episodes.map((episode) => {
+                            return (<p>{episode.name}</p>)
+                        })}
+                        {/* <Episode episodeList={this.props.episodeList} /> */}
                     </div>
                     <span>
                         <button onClick={this.toggleUpdateShowForm}>

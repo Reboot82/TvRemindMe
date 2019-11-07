@@ -17,6 +17,7 @@ const app = express()
  *
  */
 const { showRouter } = require('./controllers/show.js')
+const { episodeRouter } = require('./controllers/episode.js')
 
 
 /* Step 3
@@ -50,6 +51,7 @@ app.use(express.static(`${__dirname}/client/build`))
  * the paths defined in the router.
  */
 app.use('/api/shows', showRouter)
+app.use('/api/episodes', episodeRouter)
 
 /* Step 5
  *

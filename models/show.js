@@ -2,8 +2,8 @@
 const mongoose = require('./connection.js')
 
 const ShowSchema = new mongoose.Schema({
- name: String,
- location: String
+  name: String,
+  location: String
 })
 
 const ShowCollection = mongoose.model('Show', ShowSchema)
@@ -22,11 +22,11 @@ const addNewShow = (newShow) => {
 }
 //update
 const updateShow = (showId, updatedShow) => {
-  return ShowCollection.updateOne({_id: showId}, updatedShow)
+  return ShowCollection.updateOne({ _id: showId }, updatedShow)
 }
 //delete
 const deleteShow = (showId) => {
-  return ShowCollection.deleteOne({_id: showId})
+  return ShowCollection.deleteOne({ _id: showId })
 }
 
 

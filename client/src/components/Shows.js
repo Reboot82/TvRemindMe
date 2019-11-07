@@ -41,7 +41,7 @@ export default class Show extends Component {
                 this.setState({ showList: response.data })
             })
     }
-    
+
     createNewShow = (event) => {
         event.preventDefault()
 
@@ -73,7 +73,9 @@ export default class Show extends Component {
         const allShows = this.state.showList.map((show) => {
             return (
                 <div>
-                    <h1><Link to={`/${show._id}`} >{show.name}</Link></h1>
+                    <h2><Link to={`/${show._id}`} >
+                        {show.name}
+                    </Link></h2>
 
                 </div>
             )
@@ -81,6 +83,7 @@ export default class Show extends Component {
 
         return (
             <div>
+                <h1>Shows</h1>
                 <div>
                     {allShows}
                 </div>
