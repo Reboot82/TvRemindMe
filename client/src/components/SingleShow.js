@@ -104,13 +104,13 @@ export default class SingleShow extends Component {
                     </div>
                     <span>
                         <button onClick={this.toggleUpdateShowForm}>
-                            {this.state.updatedShow ? 'Hide' : 'Update Show'}
+                            {this.state.updatedShow ? 'Update Show' : 'Hide'}
                         </button>
-                        {this.state.updatedShow ? <form onSubmit={this.updateShow}>
+                        {this.state.updatedShow ? null : <form onSubmit={this.updateShow}>
                             <input type="text" value={this.state.updatedShow.name} name="name" placeholder="Name" onChange={this.handleInputChange} />
                             <input type="text" value={this.state.updatedShow.location} name="location" placeholder="Location" onChange={this.handleInputChange} />
                             <input type="submit" />
-                        </form> : null}
+                        </form>}
                     </span>
                     <span>
                         <button onClick={this.deleteShow}>Delete</button>
