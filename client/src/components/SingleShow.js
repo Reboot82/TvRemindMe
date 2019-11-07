@@ -96,8 +96,8 @@ export default class SingleShow extends Component {
                 <div>
                     <div>
                         <h1>{this.state.name}</h1>
-                        <h3>{this.state.location}</h3>
-                        <h2>Episodes</h2>
+                        <h4>{this.state.location}</h4>
+                        <h3>Episodes</h3>
                         {this.state.episodes.map((episode) => {
                             return (<p>{episode.name}</p>)
                         })}
@@ -107,7 +107,7 @@ export default class SingleShow extends Component {
                         <button onClick={this.toggleUpdateShowForm}>
                             {this.state.showForm ? 'Update Show' : 'Hide'}
                         </button>
-                        {this.state.showForm ? null : <form onSubmit={this.updateShow}>
+                        {this.state.showForm ? null : <form onSubmit={(event) => {this.updateShow(event); this.toggleUpdateShowForm()}}>
                             <input type="text" value={this.state.updatedShow.name} name="name" placeholder="Name" onChange={this.handleInputChange} />
                             <input type="text" value={this.state.updatedShow.location} name="location" placeholder="Location" onChange={this.handleInputChange} />
                             <input type="submit" />

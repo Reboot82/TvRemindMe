@@ -92,7 +92,7 @@ export default class Show extends Component {
                     <button onClick={this.toggleNewShowForm}>
                         {this.state.newShowForm ? 'New Show' : 'Hide'}
                     </button>
-                    {this.state.newShowForm ? null : <form onSubmit={this.createNewShow}>
+                    {this.state.newShowForm ? null : <form onSubmit={(event) => {this.createNewShow(event); this.toggleNewShowForm()}}>
                         <input type="text" value={this.state.newShow.name} name="name" placeholder="Name" onChange={this.handleInputChange} />
                         <input type="text" value={this.state.newShow.location} name="location" placeholder="Location" onChange={this.handleInputChange} />
                         <input type="submit" />
