@@ -2,6 +2,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Redirect } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 // import Episode from './Episode'
 
 /* Step 2
@@ -115,9 +116,9 @@ export default class SingleShow extends Component {
                     </span>
                     <span>
                         <button onClick={this.deleteShow}>Delete</button>
-                        <a href="/">
+                        <Link to={"/"}>
                             <button>Home</button>
-                        </a>
+                        </Link>
                     </span>
                 </div>
 
