@@ -18,6 +18,7 @@ const app = express()
  */
 const { showRouter } = require('./controllers/show.js')
 const { episodeRouter } = require('./controllers/episode.js')
+const { serviceRouter } = require('./controllers/service.js')
 
 
 /* Step 3
@@ -52,6 +53,7 @@ app.use(express.static(`${__dirname}/client/build`))
  */
 app.use('/api/shows', showRouter)
 app.use('/api/episodes', episodeRouter)
+app.use('/api/services', serviceRouter)
 
 /* Step 5
  *

@@ -3,7 +3,8 @@ const mongoose = require('./connection.js')
 
 const ShowSchema = new mongoose.Schema({
   name: String,
-  location: String
+  location: String,
+  serviceId: mongoose.Types.ObjectId
 })
 
 const ShowCollection = mongoose.model('Show', ShowSchema)
