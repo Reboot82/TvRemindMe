@@ -5,8 +5,9 @@ export default class Episode extends Component {
 
     state = {
         name: this.name,
-        watchedEpisode: this.watchedEpisode
+        watchedEpisode: false
     }
+
 
     render() {
         return (
@@ -14,7 +15,7 @@ export default class Episode extends Component {
                 <h3>{this.name}</h3>
                 <div>{this.watchedEpisode}
                 <button onClick={this.removeEpisode}>
-                    Watched
+                    Watched?
                 </button>
                 </div>
             </div>

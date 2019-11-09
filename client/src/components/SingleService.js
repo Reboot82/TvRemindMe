@@ -15,7 +15,7 @@ export default class SingleService extends Component {
     *
     */
     state = {
-        name: '',
+        name: this.name,
         showList: [],
     }
 
@@ -60,7 +60,7 @@ export default class SingleService extends Component {
                     <div>
                         <h1>{this.state.name}</h1>
                         <h3>Shows</h3>
-                        {this.state.shows.map((show) => {
+                        {this.state.showList.map((show) => {
                             return (<p>{show.name}</p>)
                         })}
                         <Show showList={this.props.showList} />
