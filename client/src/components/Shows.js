@@ -96,7 +96,7 @@ export default class Show extends Component {
                         <input type="text" value={this.state.newShow.location} name="location" placeholder="Location" onChange={this.handleInputChange} />
                         <input type="submit" />
                     </form>}
-                    <p><Link to={'./services'}>Sort By Service</Link></p>
+                    <p><Link to={'/services'}>Sort By Service</Link></p>
                 </span>
             </div>
         )
