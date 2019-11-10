@@ -13,7 +13,8 @@ export default class Episode extends Component {
         return (
             <div>
                 <h3>{this.name}</h3>
-                <div>{this.watchedEpisode}
+                <div>
+                    {/* <input type="checkbox" /> */}
                 <button onClick={this.removeEpisode}>
                     Watched?
                 </button>

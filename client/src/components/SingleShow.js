@@ -16,8 +16,8 @@ export default class SingleShow extends Component {
     *
     */
     state = {
-        name: '',
-        location: '',
+        name: this.name,
+        location: this.location,
         episodes: [],
         showForm: true,
         updatedShow: {
@@ -109,8 +109,8 @@ export default class SingleShow extends Component {
                             {this.state.showForm ? 'Update Show' : 'Hide'}
                         </button>
                         {this.state.showForm ? null : <form onSubmit={(event) => {this.updateShow(event); this.toggleUpdateShowForm()}}>
-                            <input type="text" value={this.state.updatedShow.name} name="name" placeholder="Name" onChange={this.handleInputChange} />
-                            <input type="text" value={this.state.updatedShow.location} name="location" placeholder="Location" onChange={this.handleInputChange} />
+                            <input type="text" defaultValue={this.state.name} value={this.state.updatedShow.name} name="name" placeholder="Name" onChange={this.handleInputChange} />
+                            <input type="text" defaultValue={this.state.location} value={this.state.updatedShow.location} name="location" placeholder="Location" onChange={this.handleInputChange} />
                             <input type="submit" />
                         </form>}
                     </span>
