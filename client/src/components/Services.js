@@ -40,7 +40,7 @@ export default class Service extends Component {
         const allServices = this.state.serviceList.map((service) => {
             return (
                 <div>
-                    <h2><Link to={`/${service._id}`} >
+                    <h2><Link to={`/services/${service._id}`} >
                         {service.name}
                     </Link></h2>
 
