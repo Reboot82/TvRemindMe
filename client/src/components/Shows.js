@@ -32,8 +32,6 @@ export default class Show extends Component {
     */
 
     componentDidMount() {
-        // get all shops and update state 'shopList' with results
-        //    route for get all shops is '/api/shop'
         this.refreshList()
     }
 

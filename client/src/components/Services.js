@@ -11,8 +11,6 @@ export default class Service extends Component {
     }
 
     componentDidMount() {
-        // get all shops and update state 'shopList' with results
-        //    route for get all shops is '/api/shop'
         this.refreshList()
     }
 
@@ -56,6 +54,7 @@ export default class Service extends Component {
                 <div>
                     {allServices}
                 </div>
+                <p><Link to={'/'}>Sort By Shows</Link></p>
             </div>
         )
     }

@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import { Redirect } from 'react-router-dom'
 import { Link } from 'react-router-dom'
-// import Episode from './Episode'
+import EpisodeList from './EpisodeList'
 
 /* Step 2
  * Rename this class to reflect the component being created
@@ -109,7 +109,7 @@ export default class SingleShow extends Component {
                             {this.state.showForm ? 'Update Show' : 'Hide'}
                         </button>
                         {this.state.showForm ? null : <form onSubmit={(event) => {this.updateShow(event); this.toggleUpdateShowForm()}}>
-                            <input type="text" defaultValue={this.state.name} value={this.state.updatedShow.name} name="name" placeholder="Name" onChange={this.handleInputChange} />
+                            <input type="text" defaultValue={this.props.name} value={this.state.updatedShow.name} name="name" placeholder="Name" onChange={this.handleInputChange} />
                             <input type="text" defaultValue={this.state.location} value={this.state.updatedShow.location} name="location" placeholder="Location" onChange={this.handleInputChange} />
                             <input type="submit" />
                         </form>}
