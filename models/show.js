@@ -13,6 +13,11 @@ const ShowCollection = mongoose.model('Show', ShowSchema)
 const getAllShows = () => {
   return ShowCollection.find()
 }
+
+const getShowByServiceId = (serviceId) => {
+  return ShowCollection.find({ serviceId })
+}
+
 //getOne
 const getShow = (showId) => {
   return ShowCollection.findById(showId)
@@ -36,5 +41,6 @@ module.exports = {
   getShow,
   addNewShow,
   updateShow,
-  deleteShow
+  deleteShow,
+  getShowByServiceId
 }

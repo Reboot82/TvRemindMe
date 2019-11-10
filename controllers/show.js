@@ -23,6 +23,17 @@ showRouter.get('/', (req, res) => {
     })
 })
 
+showRouter.get('/byServiceId/:serviceId', (req, res) => {
+  showApi.getShowByServiceId(req.params.showId)
+  .then((singleShow) => {
+    res.json(singleShow)
+  })
+  .catch(error => {
+    console.log(error)
+    res.json(error)
+  })
+})
+
 //getOne
 showRouter.get('/:showId', (req, res) => {
   showApi.getShow(req.params.showId)

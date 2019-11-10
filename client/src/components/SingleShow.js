@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import { Redirect } from 'react-router-dom'
 import { Link } from 'react-router-dom'
-import EpisodeList from './EpisodeList'
 
 /* Step 2
  * Rename this class to reflect the component being created
@@ -93,9 +92,9 @@ export default class SingleShow extends Component {
                         <h4>{this.state.location}</h4>
                         <h3>Episodes</h3>
                         {this.state.episodes.map((episode) => {
-                            return (<p>{episode.name}</p>)
+                            return (
+                            <p>{episode.name}</p>)
                         })}
-                        {/* <Episode episodeList={this.props.episodeList} /> */}
                     </div>
                     <span>
                         <button onClick={this.toggleUpdateShowForm}>
