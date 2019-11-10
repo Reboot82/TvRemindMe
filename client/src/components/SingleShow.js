@@ -44,32 +44,25 @@ export default class SingleShow extends Component {
             })
     }
 
-    // componentDidMount() {
-    // const showId = this.props.match.params.showId
-    // axios.get(`/api/shows/${showId}`)
-    //     .then((res) => {
-    //         console.log(res.data)
-    //         const previousState = {...this.state}
-    //         const newState = Object.assign({}, previousState, res.data)
-    //          this.setState(newState)
-    //     })
-
-    //  axios.get(`api/episodes/byShowId/${showId})
-    //      .then((res) => {
-    //         console.log(res.data)
-    //         const previousState = {...this.state}
-    //         const newState = Object.assign({episodes: []}, previousState, { episodes: res.data })
-    //          this.setState(newState)
-    //     })
-    // }
-
     componentDidMount() {
         const showId = this.props.match.params.showId
         axios.get(`/api/shows/${showId}`)
             .then((res) => {
-                this.setState(res.data)
+                console.log(res.data)
+                const previousState = { ...this.state }
+                const newState = Object.assign({}, previousState, res.data)
+                this.setState(newState)
+            })
+
+        axios.get(`api/episodes/byShowId/${showId}`)
+            .then((res) => {
+                console.log(res.data)
+                const previousState = { ...this.state }
+                const newState = Object.assign({ episodes: [] }, previousState, { episodes: res.data })
+                this.setState(newState)
             })
     }
+
 
     toggleUpdateShowForm = () => {
         const showForm = !this.state.showForm
@@ -108,8 +101,8 @@ export default class SingleShow extends Component {
                         <button onClick={this.toggleUpdateShowForm}>
                             {this.state.showForm ? 'Update Show' : 'Hide'}
                         </button>
-                        {this.state.showForm ? null : <form onSubmit={(event) => {this.updateShow(event); this.toggleUpdateShowForm()}}>
-                            <input type="text" defaultValue={this.props.name} value={this.state.updatedShow.name} name="name" placeholder="Name" onChange={this.handleInputChange} />
+                        {this.state.showForm ? null : <form onSubmit={(event) => { this.updateShow(event); this.toggleUpdateShowForm() }}>
+                            <input type="text" defaultValue={this.state.name} value={this.state.updatedShow.name} name="name" placeholder="Name" onChange={this.handleInputChange} />
                             <input type="text" defaultValue={this.state.location} value={this.state.updatedShow.location} name="location" placeholder="Location" onChange={this.handleInputChange} />
                             <input type="submit" />
                         </form>}
