@@ -83,6 +83,8 @@ export default class SingleShow extends Component {
         this.setState({ updatedShow: updatedShow })
     }
 
+    
+
     render() {
         return (
             this.state.redirectToHome ? <Redirect to="/" /> :
