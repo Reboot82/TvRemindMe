@@ -96,14 +96,10 @@ export default class Show extends Component {
                     {this.state.newShowForm ? null : <form onSubmit={(event) => { this.createNewShow(event); this.toggleNewShowForm() }}>
                         <input
                             type="text"
-                            value={this.state.newShow.name}
                             name="name" placeholder="Name"
                             onChange={this.handleInputChange} />
                         <select
-                            // type="text"
-                            // value={this.state.newShow.location}
                             name="location"
-                            // placeholder="Location"
                             onChange={this.handleInputChange}>
                                 {this.state.serviceList.map(service => {
                                     return (

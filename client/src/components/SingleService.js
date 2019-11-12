@@ -2,7 +2,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom';
-import Show from './Shows' 
 
 
 /* Step 2
@@ -48,30 +47,29 @@ export default class SingleService extends Component {
     }
 
     render() {
-        // const showList = this.props.showList.map((show, index) => {
-        //     return 
-
-        // });
         return (
             <div>
                 <div>
                     <h1>{this.state.name}</h1>
                     <h3>Shows</h3>
                     {this.state.showList.map((show) => {
-                        return (<Show
-                            name={show.name}
-                            location={show.location}
-                            showId={show.showId} />)
-                    })}
+                        return (
+                            <div>
+                                <Link to={`/${show._id}`} >
+                                    {show.name}
+                                </Link>
+                            </div>
+                )
+            })}
                 </div>
 
-                            <span>
-                                <Link to={"/"}>
-                                    <button>Home</button>
-                                </Link>
-                            </span>
-            </div>
+            <span>
+                <Link to={"/"}>
+                    <button>Home</button>
+                </Link>
+            </span>
+            </div >
 
-                )
-            }
-        }
+        )
+    }
+}

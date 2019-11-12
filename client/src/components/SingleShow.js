@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import { Redirect } from 'react-router-dom'
 import { Link } from 'react-router-dom'
+import serviceList from './serviceList'
 
 /* Step 2
  * Rename this class to reflect the component being created
@@ -23,7 +24,8 @@ export default class SingleShow extends Component {
             name: '',
             location: ''
         },
-        redirectToHome: false
+        redirectToHome: false,
+        serviceList: serviceList
     }
 
     refreshList = () => {
@@ -83,7 +85,7 @@ export default class SingleShow extends Component {
         this.setState({ updatedShow: updatedShow })
     }
 
-    
+
 
     render() {
         return (
@@ -107,7 +109,17 @@ export default class SingleShow extends Component {
                         </button>
                         {this.state.showForm ? null : <form onSubmit={(event) => { this.updateShow(event); this.toggleUpdateShowForm() }}>
                             <input type="text" defaultValue={this.state.name} value={this.state.updatedShow.name} name="name" placeholder="Name" onChange={this.handleInputChange} />
-                            <input type="text" defaultValue={this.state.location} value={this.state.updatedShow.location} name="location" placeholder="Location" onChange={this.handleInputChange} />
+                            <select
+                                name="location"
+                                onChange={this.handleInputChange}>
+                                {this.state.serviceList.map(service => {
+                                    return (
+                                        <option >
+                                            {service.name}
+                                        </option>
+                                    )
+                                })}
+                            </select>
                             <input type="submit" />
                         </form>}
                     </span>
