@@ -93,7 +93,10 @@ export default class SingleShow extends Component {
                         <h3>Episodes</h3>
                         {this.state.episodes.map((episode) => {
                             return (
-                            <p>{episode.name}</p>)
+                                <div>
+                                    <p>{episode.name}</p>
+                                    <button>Watched!</button>
+                                </div>)
                         })}
                     </div>
                     <span>

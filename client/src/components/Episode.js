@@ -5,7 +5,8 @@ export default class Episode extends Component {
 
     state = {
         name: this.name,
-        watchedEpisode: false
+        watchedEpisode: false,
+        showId: this.showId
     }
 
     componentDidMount() {
