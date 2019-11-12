@@ -48,6 +48,7 @@ episodeRouter.get('/:episodeId', (req, res) => {
 
 //create
 episodeRouter.post('/', (req, res) => {
+    console.log('episodeRouter CREATE req.body', req.body)
     episodeApi.addNewEpisode(req.body)
         .then((newEpisode) => {
             res.json(newEpisode)
