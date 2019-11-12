@@ -2,7 +2,7 @@
 
 ## Problem Statement
 
-With all the new streaming services coming out, it can be hard to keep track of where your favorite shows are located, and even harder to remember when a new episode/season has aired. This application allows the user to set up a personal database of their favorite shows, and set premiere dates that will update the unwatched episodes, so that you never miss a new episode of your favorite program, regardless of where it airs.
+With all the new streaming services coming out, it can be hard to keep track of where your favorite shows are located, and even harder to remember when a new episode/season has aired. This application allows the user to set up a personal database of their favorite shows, and set premiere dates that will update the unwatched episodes, so that you never miss a new episode of your favorite program, regardless of where it airs. Perfect for users with many different streaming services, as well as the casual viewer that just doesn't want to have to remember when/where a show airs.
 
 ## Getting Started
 
@@ -12,7 +12,11 @@ Trello Project Board: [Here](https://trello.com/b/Fd2v7TtX/ga-project-3-tv-remin
 
 ### Wireframe
 
+![alt text](client/public/images/Wireframe.jpg "Wireframe")
+
 ### ERD
+
+![alt text](client/public/images/ERD.jpg/ "ERD")
 
 ## Versioning
 
