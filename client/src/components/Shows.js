@@ -2,6 +2,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom';
+import serviceList from './serviceList'
 
 
 /* Step 2
@@ -21,6 +22,7 @@ export default class Show extends Component {
             name: '',
             location: ''
         },
+        serviceList: serviceList
     }
 
     /* Step 4
@@ -91,9 +93,26 @@ export default class Show extends Component {
                     <button onClick={this.toggleNewShowForm}>
                         {this.state.newShowForm ? 'New Show' : 'Hide'}
                     </button>
-                    {this.state.newShowForm ? null : <form onSubmit={(event) => {this.createNewShow(event); this.toggleNewShowForm()}}>
-                        <input type="text" value={this.state.newShow.name} name="name" placeholder="Name" onChange={this.handleInputChange} />
-                        <input type="text" value={this.state.newShow.location} name="location" placeholder="Location" onChange={this.handleInputChange} />
+                    {this.state.newShowForm ? null : <form onSubmit={(event) => { this.createNewShow(event); this.toggleNewShowForm() }}>
+                        <input
+                            type="text"
+                            value={this.state.newShow.name}
+                            name="name" placeholder="Name"
+                            onChange={this.handleInputChange} />
+                        <select
+                            // type="text"
+                            // value={this.state.newShow.location}
+                            name="location"
+                            // placeholder="Location"
+                            onChange={this.handleInputChange}>
+                                {this.state.serviceList.map(service => {
+                                    return (
+                                        <option >
+                                            {service.name}
+                                        </option>
+                                    )
+                                })}
+                        </select>
                         <input type="submit" />
                     </form>}
                     <p><Link to={'/services'}>Sort By Service</Link></p>

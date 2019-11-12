@@ -1,25 +1,26 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom';
+import serviceList from './serviceList'
 
 
 export default class Service extends Component {
 
     state = {
-        serviceList: [],
+        serviceList: serviceList,
 
     }
 
     componentDidMount() {
-        this.refreshList()
+        // this.refreshList()
     }
 
-    refreshList = () => {
-        axios.get('/api/services')
-            .then((response) => {
-                this.setState({ serviceList: response.data })
-            })
-    }
+    // refreshList = () => {
+    //     axios.get('/api/services')
+    //         .then((response) => {
+    //             this.setState({ serviceList: response.data })
+    //         })
+    // }
 
     createNewService = (event) => {
         event.preventDefault()
@@ -40,7 +41,7 @@ export default class Service extends Component {
         const allServices = this.state.serviceList.map((service) => {
             return (
                 <div>
-                    <h2><Link to={`/services/${service._id}`} >
+                    <h2><Link to={`/services/${service.id}`} >
                         {service.name}
                     </Link></h2>
 
