@@ -84,7 +84,7 @@ export default class Show extends Component {
         })
 
         return (
-            <div>
+            <div className="tv">
                 <h1>Shows</h1>
                 <div>
                     {allShows}

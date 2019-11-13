@@ -64,8 +64,8 @@ export default class SingleService extends Component {
                 </div>
 
             <span>
-                <Link to={"/"}>
-                    <button>Home</button>
+                <Link to={"/services"}>
+                    <button>Back</button>
                 </Link>
             </span>
             </div >
